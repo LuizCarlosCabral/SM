@@ -18,7 +18,7 @@ with open(file_path, "w", encoding="utf-8") as f:
 print("💾 Arquivo 'dados.json' atualizado localmente")
 
 # === 3. Conectar ao GitHub ===
-token = os.getenv("MEU_TOKEN")
+token = os.getenv("MY_GITHUB_TOKEN")
 if not token:
     raise ValueError("❌ Token não encontrado. Verifique se MEU_TOKEN foi definido.")
 
