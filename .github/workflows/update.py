@@ -11,7 +11,7 @@ data = response.json()
 with open("dados.json", "w", encoding="utf-8") as f:json.dump(data, f, indent=4, ensure_ascii=False)
 
 # Envia atualização para o GitHub
-token = "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"
+token = "MEU_TOKEN"
 repo_name = "LuizCarlosCabral/SM"
 file_path = "dados.json"
 g = Github(auth=Auth.Token(token))
