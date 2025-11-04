@@ -10,16 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar repositório
+      - name: Checkout repositório
         uses: actions/checkout@v4
 
       - name: Configurar Python
         uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+        with: python-version: '3.x'
 
       - name: Instalar dependências
         run: pip install requests
+
+   - name: Verificar se houve mudança
+        run: |
+          if git diff --quiet data.json; then
+            echo "Nenhuma mudança detectada."
+            echo "skip_commit=true" >> $GITHUB_ENV
+          else
+            echo "Mudanças detectadas!"
+            echo "skip_commit=false" >> $GITHUB_ENV
+          fi
 
       - name: Atualizar JSON
         run: |
