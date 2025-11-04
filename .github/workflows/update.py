@@ -11,11 +11,11 @@ data = response.json()
 with open("dados.json", "w", encoding="utf-8") as f:json.dump(data, f, indent=4, ensure_ascii=False)
 
 # Envia atualização para o GitHub
-token = "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"
-repo_name = "LuizCarlosCabral/SM"
-file_path = "dados.json"
-g = Github(token)
-repo = g.get_repo(repo_name)
+# token = "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"
+# repo_name = "LuizCarlosCabral/SM"
+# file_path = "dados.json"
+# g = Github(token)
+# repo = g.get_repo(repo_name)
 
 # Pega arquivo
 contents = repo.get_contents(file_path)
