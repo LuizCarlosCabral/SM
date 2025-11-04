@@ -15,12 +15,13 @@ jobs:
 
       - name: Configurar Python
         uses: actions/setup-python@v5
-        with: python-version: '3.x'
+        with:
+          python-version: '3.x'
 
       - name: Instalar dependências
         run: pip install PyGithub requests
 
-   - name: Verificar se houve mudança
+      - name: Verificar se houve mudança
         run: |
           if git diff --quiet data.json; then
             echo "Nenhuma mudança detectada."
