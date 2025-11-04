@@ -14,7 +14,7 @@ with open("dados.json", "w", encoding="utf-8") as f:json.dump(data, f, indent=4,
 token = "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"
 repo_name = "LuizCarlosCabral/SM"
 file_path = "dados.json"
-g = Github(token)
+g = Github(auth=Auth.Token(token))
 repo = g.get_repo(repo_name)
 
 # Pega arquivo
