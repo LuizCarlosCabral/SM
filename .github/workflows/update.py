@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 from github import Github
 
 # Busca dados
@@ -11,7 +12,7 @@ data = response.json()
 with open("dados.json", "w", encoding="utf-8") as f:json.dump(data, f, indent=4, ensure_ascii=False)
 
 # Envia atualização para o GitHub
-token = "MEU_TOKEN"
+token = os.getenv("MY_GITHUB_TOKEN")
 repo_name = "LuizCarlosCabral/SM"
 file_path = "dados.json"
 g = Github(auth=Auth.Token(token))
