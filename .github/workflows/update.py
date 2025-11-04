@@ -22,7 +22,7 @@ token = os.getenv("MEU_TOKEN")
 if not token:
     raise ValueError("❌ Token não encontrado. Verifique se MEU_TOKEN foi definido.")
 
-g = Github(auth=Auth.Token(token))
+auth=Auth.Token(token)
 repo_name = "LuizCarlosCabral/SM"
 repo = g.get_repo(repo_name)
 
