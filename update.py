@@ -22,9 +22,9 @@ token = os.getenv("MY_GITHUB_TOKEN")
 if not token:
     raise ValueError("❌ Token não encontrado. Verifique se MEU_TOKEN foi definido.")
 
-auth=Auth.Token(token)
+g = Github(auth=Auth.Token(token))
 repo_name = "LuizCarlosCabral/SM"
-repo = auth.get_repo(repo_name)
+repo = g.get_repo(repo_name)
 
 # === 4. Atualizar o arquivo no repositório ===
 try:
